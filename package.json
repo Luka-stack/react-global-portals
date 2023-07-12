@@ -1,0 +1,64 @@
+{
+  "name": "react-global-portals",
+  "version": "0.0.0",
+  "license": "MIT",
+  "typings": "dist/index.d.ts",
+  "description": "Effortless react notifications/modals",
+  "keywords": [
+    "react",
+    "notifications",
+    "portals",
+    "modals",
+    "react-component",
+    "react-global-portals"
+  ],
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Luka-stack/react-global-portals"
+  },
+  "author": "Łukasz Rafa <lkr.rafa@gmail.com> (https://github.com/Luka-stack)",
+  "bugs": {
+    "url": "https://github.com/Luka-stack/react-global-portals/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:core && npm run pack-and-extract",
+    "build:core": "microbundle --jsx React.createElement --jsxFragment React.Fragment",
+    "setup": "npm run clean && npm run build && npm run pack-and-extract",
+    "pack-and-extract": "yarn pack -f react-toastify.tgz && npm run rm-pkg && npm run extract-pkg",
+    "rm-pkg": "rimraf node_modules/react-toastify && mkdir -p node_modules/react-toastify",
+    "extract-pkg": "tar xzvf react-toastify.tgz -C node_modules/react-toastify --strip-components 1 && rimraf react-toastify.tgz"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-v8": "^0.33.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "happy-dom": "^9.20.3",
+    "microbundle": "^0.15.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9",
+    "vitest": "^0.32.2"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  }
+}
