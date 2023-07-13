@@ -11,8 +11,6 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "noEmit": false,
-    "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react",
