@@ -1,10 +1,9 @@
-import React from 'react';
-import '../index.css';
+import { styled } from 'styled-components';
+import React, { forwardRef, useEffect } from 'react';
 
-import { forwardRef, useEffect } from 'react';
-import { PortalContainerProps } from '../types';
-import { usePortalContainer } from '../hooks/use-portal-container';
 import { Portal } from './portal';
+import { usePortalContainer } from '../hooks/use-portal-container';
+import { PortalContainerProps } from '../types';
 
 export const PortalContainer = forwardRef<HTMLDivElement, PortalContainerProps>(
   (props, ref) => {
@@ -21,16 +20,16 @@ export const PortalContainer = forwardRef<HTMLDivElement, PortalContainerProps>(
     }, []);
 
     return (
-      <div
-        className="portify__container"
-        ref={containerRef}
-        id={containerId}
-        data-testid={containerId}
-      >
+      <Container ref={containerRef} id={containerId} data-testid={containerId}>
         {portal ? (
           <Portal component={portal.component} props={portal.props} />
         ) : null}
-      </div>
+      </Container>
     );
   }
 );
+
+const Container = styled.div`
+  z-index: 9999;
+  position: fixed;
+`;

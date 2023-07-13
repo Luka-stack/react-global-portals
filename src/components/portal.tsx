@@ -1,4 +1,5 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 
 import { ValidatedPortalProps } from '../types';
 import { useDismissTimer } from '../hooks/use-dismiss-timer';
@@ -12,8 +13,19 @@ export function Portal({ component, props }: Props) {
   useDismissTimer(props.id, props.timeout, props.pauseOnFocusLoss);
 
   return (
-    <div className="portify__portal" style={props.style} data-testid={'portal'}>
+    <Container $custom={props.style} data-testid={'portal'}>
       {component}
-    </div>
+    </Container>
   );
 }
+
+const Container = styled.div<{ $custom: React.CSSProperties }>`
+  position: fixed;
+  > * {
+    &:first-child {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  ${({ $custom }) => css($custom as any)}
+`;

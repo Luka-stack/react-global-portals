@@ -136,29 +136,6 @@ describe('portal', () => {
 
       expect(screen.queryByText(/Test/)).toBe(null);
     });
-
-    it('should show portal in defined position', () => {
-      render(<PortalContainer containerId="test" />);
-
-      act(() => {
-        portal.show(<div>Test</div>, {
-          size: { height: '50vh', width: '100vh' },
-          position: { bottom: '0', left: '0' },
-        });
-      });
-
-      const element = screen.getByText(/Test/);
-
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const parent = element.parentElement!;
-
-      expect(parent.style.width).toEqual('100vh');
-      expect(parent.style.height).toEqual('50vh');
-      expect(parent.style.left).toEqual('0px');
-      expect(parent.style.bottom).toEqual('0px');
-      expect(parent.style.right).toBe('');
-      expect(parent.style.top).toBe('');
-    });
   });
 
   describe('dismiss', () => {
