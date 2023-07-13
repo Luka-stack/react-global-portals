@@ -58,11 +58,13 @@ function mergePortalProps(props?: PortalProps): ValidatedPortalProps {
     );
   }
 
+  const position = props?.position || { left: 0, top: 0 };
+
   return {
     ...props,
     id: props?.id || generatePortalId(),
     style: {
-      ...props?.position,
+      ...position,
       width: props?.size?.width || '100vw',
       height: props?.size?.height || '100vh',
     },
