@@ -1,5 +1,9 @@
 # React-Global-Portals
 
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/Luka-stack/react-global-portals/main.yml?style=for-the-badge)](https://github.com/Luka-stack/react-global-portals/actions)
+[![npm](https://img.shields.io/npm/v/react-global-portals?style=for-the-badge)](https://github.com/Luka-stack/react-global-portals/tree/v1.5.0)
+[![NPM](https://img.shields.io/npm/l/react-global-portals?style=for-the-badge)](https://github.com/Luka-stack/react-global-portals/blob/v1.5.0/LICENSE)
+
 💖 React-Global-Portals takes from you all worries related to show notifications/modal etc. on top of everything 💖
 
 ## ❯ Instalation

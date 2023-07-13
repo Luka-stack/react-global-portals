@@ -1,4 +1,4 @@
-name: CI
+name: React-Global-Portals CI
 on:
   push:
     branches:
