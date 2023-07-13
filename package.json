@@ -1,6 +1,6 @@
 {
   "name": "react-global-portals",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "MIT",
   "typings": "dist/index.d.ts",
   "description": "Effortless react notifications/modals",
