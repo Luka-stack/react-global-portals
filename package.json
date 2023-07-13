@@ -33,9 +33,9 @@
     "build": "npm run clean && npm run build:core && npm run pack-and-extract",
     "build:core": "microbundle --jsx React.createElement --jsxFragment React.Fragment",
     "setup": "npm run clean && npm run build && npm run pack-and-extract",
-    "pack-and-extract": "yarn pack -f react-toastify.tgz && npm run rm-pkg && npm run extract-pkg",
-    "rm-pkg": "rimraf node_modules/react-toastify && mkdir -p node_modules/react-toastify",
-    "extract-pkg": "tar xzvf react-toastify.tgz -C node_modules/react-toastify --strip-components 1 && rimraf react-toastify.tgz"
+    "pack-and-extract": "yarn pack -f react-global-portals.tgz && npm run rm-pkg && npm run extract-pkg",
+    "rm-pkg": "rimraf node_modules/react-global-portals && mkdir -p node_modules/react-global-portals",
+    "extract-pkg": "tar xzvf react-global-portals.tgz -C node_modules/react-global-portals --strip-components 1 && rimraf react-global-portals.tgz"
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
