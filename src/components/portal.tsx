@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { ValidatedPortalProps } from '../types';
 import { useDismissTimer } from '../hooks/use-dismiss-timer';
 

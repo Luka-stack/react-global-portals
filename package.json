@@ -34,7 +34,7 @@
     "build:core": "microbundle --jsx React.createElement --jsxFragment React.Fragment",
     "setup": "npm run clean && npm run build && npm run pack-and-extract",
     "pack-and-extract": "yarn pack -f react-global-portals.tgz && npm run rm-pkg && npm run extract-pkg",
-    "rm-pkg": "rimraf node_modules/react-global-portals && mkdir -p node_modules/react-global-portals",
+    "rm-pkg": "rimraf node_modules/react-global-portals && mkdirp node_modules/react-global-portals",
     "extract-pkg": "tar xzvf react-global-portals.tgz -C node_modules/react-global-portals --strip-components 1 && rimraf react-global-portals.tgz"
   },
   "devDependencies": {
@@ -50,6 +50,7 @@
     "eslint-plugin-react-refresh": "^0.3.4",
     "happy-dom": "^9.20.3",
     "microbundle": "^0.15.1",
+    "mkdirp": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.1",
