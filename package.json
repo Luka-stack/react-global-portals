@@ -1,6 +1,6 @@
 {
   "name": "react-global-portals",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "typings": "dist/index.d.ts",
   "description": "Effortless react notifications/modals",
@@ -62,5 +62,19 @@
   "peerDependencies": {
     "react": ">=16",
     "react-dom": ">=16"
+  },
+  "main": "dist/react-global-portals.js",
+  "module": "dist/react-global-portals.esm.mjs",
+  "umd:main": "dist/react-global-portals.umd.js",
+  "unpkg": "dist/react-global-portals.umd.js",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/react-global-portals.js",
+      "import": "./dist/react-global-portals.esm.mjs",
+      "umd": "./dist/react-global-portals.umd.js"
+    },
+    "./package.json": "./package.json"
   }
 }
