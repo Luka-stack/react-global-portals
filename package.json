@@ -1,6 +1,6 @@
 {
   "name": "react-global-portals",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "typings": "dist/index.d.ts",
   "description": "Effortless react notifications/modals",
@@ -38,6 +38,7 @@
     "extract-pkg": "tar xzvf react-global-portals.tgz -C node_modules/react-global-portals --strip-components 1 && rimraf react-global-portals.tgz"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",

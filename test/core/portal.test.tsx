@@ -8,7 +8,6 @@ import {
 } from '../../src/core/event-manager';
 import { portal } from '../../src/core/portal';
 import { PortalContainer } from '../../src/components/portal-container';
-import { FORCE_ACTION } from '../../src/types';
 
 beforeEach(() => {
   vi.useFakeTimers();
@@ -282,7 +281,7 @@ describe('portal', () => {
 
       act(() => {
         portal.show(<div>Show</div>);
-        portal.forceShow(<div>Force</div>, {}, FORCE_ACTION.DismissCurrent);
+        portal.forceShow(<div>Force</div>, {}, 'DismissCurrent');
       });
 
       expect(screen.queryByText(/Show/)).toBe(null);
@@ -302,7 +301,7 @@ describe('portal', () => {
       act(() => {
         portal.show(<div>Show</div>);
         portal.show(<div>Second</div>);
-        portal.forceShow(<div>Force</div>, {}, FORCE_ACTION.DismissQueue);
+        portal.forceShow(<div>Force</div>, {}, 'DismissQueue');
       });
 
       expect(screen.queryByText(/Show/)).toBe(null);
@@ -324,7 +323,7 @@ describe('portal', () => {
       act(() => {
         portal.show(<div>Show</div>);
         portal.show(<div>Second</div>);
-        portal.forceShow(<div>Force</div>, {}, FORCE_ACTION.DismissAll);
+        portal.forceShow(<div>Force</div>, {}, 'DismissAll');
       });
 
       expect(screen.queryByText(/Show/)).toBe(null);

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { eventManager, Event } from '../../src/core/event-manager';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { DISMISS_ACTION } from '../../src/types';
 
 const events: Event[] = [
   Event.Clear,
@@ -36,7 +35,7 @@ describe('EventManager', () => {
     expect(callbackNr1).not.toBeCalled();
     expect(callbackNr2).not.toBeCalled();
 
-    eventManager.emit(Event.Clear, DISMISS_ACTION.Dismiss);
+    eventManager.emit(Event.Clear, 'Dismiss');
     expect(callbackNr1).toHaveBeenCalledTimes(1);
     expect(callbackNr2).toHaveBeenCalledTimes(1);
   });
@@ -48,11 +47,11 @@ describe('EventManager', () => {
     eventManager.on(Event.Clear, callbackNr1);
     eventManager.on(Event.Clear, callbackNr2);
 
-    eventManager.emit(Event.Clear, DISMISS_ACTION.Dismiss);
+    eventManager.emit(Event.Clear, 'Dismiss');
 
     eventManager.off(Event.Clear, callbackNr1);
 
-    eventManager.emit(Event.Clear, DISMISS_ACTION.Dismiss);
+    eventManager.emit(Event.Clear, 'Dismiss');
 
     expect(callbackNr1).toBeCalledTimes(1);
     expect(callbackNr2).toBeCalledTimes(2);
@@ -63,9 +62,9 @@ describe('EventManager', () => {
     const callback = vi.fn();
 
     eventManager.on(Event.Clear, callback);
-    eventManager.emit(Event.Clear, DISMISS_ACTION.Dismiss);
+    eventManager.emit(Event.Clear, 'Dismiss');
     eventManager.off(Event.Clear);
-    eventManager.emit(Event.Clear, DISMISS_ACTION.Dismiss);
+    eventManager.emit(Event.Clear, 'Dismiss');
 
     expect(callback).toBeCalledTimes(1);
     expect(eventManager.events.get(Event.Clear)).toBeUndefined();
